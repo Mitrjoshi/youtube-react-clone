@@ -1,8 +1,8 @@
 # Youtube clone
 
-Introducing a one-of-a-kind YouTube Clone crafted by Mitr Joshi, utilizing React and TailwindCSS. This remarkable replica comes equipped with a plethora of captivating features. Firstly, it incorporates an ingenious save-to-watch-later functionality, seamlessly integrated with Firebase. Moreover, users can effortlessly remove videos from their watch later list. Furthermore, to enhance user experience, Google authentication has been implemented, ensuring a secure and convenient login process.
+Introducing a unique YouTube Clone created by Mitr Joshi using React and TailwindCSS. This exceptional clone offers a range of cool features. One notable addition is the ability to save videos for later viewing, powered by Firebase. Users can easily remove videos from their watch later list as well. Additionally, Google authentication has been implemented to ensure a secure login process.
 
-The YouTube Clone is meticulously designed to be fully responsive, providing optimal performance across all devices. To fetch videos, the application leverages the powerful Rapid API, ensuring a seamless streaming experience. Notably, a groundbreaking addition has been made to the Clone—unlike the official YouTube app, users can now add shorts to their watch later list. This innovative feature sets this Clone apart, adding an extra layer of functionality and enjoyment for users.
+The YouTube Clone has been meticulously designed to be responsive, with a focus on desktop devices. While it provides a satisfactory experience on other devices, its optimal performance is tailored to desktop screens. To fetch videos, the application leverages the powerful Rapid API, ensuring a seamless streaming experience. Notably, a groundbreaking feature has been added to this clone - unlike the official YouTube app, users can now add shorts to their watch later list. This innovative addition sets the clone apart and adds an extra layer of functionality and enjoyment for users.
 
 # Core packages
 
