@@ -28,6 +28,12 @@ YouTube Clone made by Mitr Joshi in React and TailwindCSS, i also some cool feat
 https://youtube-clone-mitr.netlify.app
 
 # Preview
+![youtube1](https://github.com/Mitrjoshi/youtube-react-clone/assets/114912151/93652b2b-c4f8-4643-9c36-804b78c8d868)
+![youtube2](https://github.com/Mitrjoshi/youtube-react-clone/assets/114912151/ddfc9eb9-42fc-4c1c-a2e2-9fdf569f9aec)
+![youtube3](https://github.com/Mitrjoshi/youtube-react-clone/assets/114912151/e828501a-0082-470a-aa12-a293155d8fa8)
+![youtube4](https://github.com/Mitrjoshi/youtube-react-clone/assets/114912151/fe7b50e3-e638-48d3-9cc3-08f42275df08)
+![youtube5](https://github.com/Mitrjoshi/youtube-react-clone/assets/114912151/ca942012-150d-43c2-baf6-acbe05ebfa98)
+
 
 # Run locally
 
