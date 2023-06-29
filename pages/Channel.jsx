@@ -92,8 +92,6 @@ const Channel = () => {
     }
   }, []);
 
-  console.log(channel);
-
   return (
     <>
       {isOnline ? (
@@ -106,7 +104,7 @@ const Channel = () => {
             <>
               {channel.length !== 0 ? (
                 <>
-                  {channel?.banner !== null ? (
+                  {channel?.banner !== null && channel?.banner ? (
                     <div>
                       <img
                         src={channel.banner[channel?.banner?.length - 1].url}

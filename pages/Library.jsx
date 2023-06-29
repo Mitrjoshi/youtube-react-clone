@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ContextConstant } from "../context/Context.jsx";
+import { OfflinePage } from "./";
 
 const Library = () => {
   const { darkMode, activeCategory, searchQuery, setActiveCategory } =
@@ -20,14 +21,35 @@ const Library = () => {
     document.title = "Library - YouTube";
   }, []);
 
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnlineStatus = () => setIsOnline(true);
+    const handleOfflineStatus = () => setIsOnline(false);
+
+    window.addEventListener("online", handleOnlineStatus);
+    window.addEventListener("offline", handleOfflineStatus);
+
+    return () => {
+      window.removeEventListener("online", handleOnlineStatus);
+      window.removeEventListener("offline", handleOfflineStatus);
+    };
+  }, []);
+
   return (
-    <div
-      className={`main-page ${
-        darkMode ? "bg-dark text-white" : "bg-light text-black"
-      }`}
-    >
-      Library
-    </div>
+    <>
+      {isOnline ? (
+        <div
+          className={`main-page ${
+            darkMode ? "bg-dark text-white" : "bg-light text-black"
+          }`}
+        >
+          Library
+        </div>
+      ) : (
+        <OfflinePage />
+      )}
+    </>
   );
 };
 

@@ -17,6 +17,7 @@ import {
   moredark,
   internet,
 } from "../assets";
+import { InvalidLink, OfflinePage } from "./";
 
 const Shorts = () => {
   const {
@@ -126,69 +127,38 @@ const Shorts = () => {
             darkMode ? "bg-dark text-white" : "bg-light text-black"
           } flex flex-col main-page justify-center items-center`}
         >
-          <div className="grid gap-3 xs:h-[90vh] h-[99vh] w-full justify-center scroll-parent">
-            {videos.length > 0 ? (
-              videos.map((video, index) => (
-                <div
-                  className="scroll-item flex items-end gap-2"
-                  key={index}
-                  ref={(el) => (videoRefs.current[index] = el)}
-                >
-                  <ShortsPlayer
-                    shortsId={video.videoId}
-                    index={index}
-                    currentVideoIndex={currentVideoIndex}
-                  />
-                  <ShortsButtons />
+          {videos?.error === undefined ? (
+            <div className="grid gap-3 xs:h-[90vh] h-[99vh] w-full justify-center scroll-parent">
+              {videos.length > 0 ? (
+                videos.map((video, index) => (
+                  <div
+                    className="scroll-item flex items-end gap-2"
+                    key={index}
+                    ref={(el) => (videoRefs.current[index] = el)}
+                  >
+                    <ShortsPlayer
+                      shortsId={video.videoId}
+                      index={index}
+                      currentVideoIndex={currentVideoIndex}
+                    />
+                    <ShortsButtons />
+                  </div>
+                ))
+              ) : (
+                <div className="grid gap-3">
+                  <div className="flex items-end gap-3">
+                    <ShortsDummyLayout />
+                    <ShortsButtons />
+                  </div>
                 </div>
-              ))
-            ) : (
-              <div className="grid gap-3">
-                <div className="flex items-end gap-3">
-                  <ShortsDummyLayout />
-                  <ShortsButtons />
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          ) : (
+            <InvalidLink name="video" />
+          )}
         </div>
       ) : (
-        <div
-          className={`main-page  ${
-            darkMode ? "bg-dark text-white" : "bg-light text-black"
-          }`}
-        >
-          <div
-            className={` ${
-              darkMode ? "bg-dark text-light" : "bg-light text-black"
-            } flex flex-col justify-center items-center no-network-page gap-4`}
-          >
-            <img src={internet} alt="Oops" />
-            <div
-              className={`text-[20px] flex justify-center items-center flex-col ${
-                darkMode ? "text-light" : "text-black"
-              }`}
-            >
-              <p>Connect to the Internet.</p>
-              <p>You're offline. Check your connection..</p>
-            </div>
-            {darkMode ? (
-              <button
-                className="border profile-icon border-[#353535] text-[#2e96ff] xs:hover:bg-[#263850] h-[35px] px-4 gap-2 flex justify-center items-center rounded-[20px]"
-                onClick={handleRetry}
-              >
-                Retry
-              </button>
-            ) : (
-              <button
-                className="border profile-icon border-[#d4d4d4] text-[#0666df] xs:hover:bg-[#def1ff] h-[35px] px-4 gap-2 flex justify-center items-center rounded-[20px]"
-                onClick={handleRetry}
-              >
-                Retry
-              </button>
-            )}
-          </div>
-        </div>
+        <OfflinePage />
       )}
     </>
   );

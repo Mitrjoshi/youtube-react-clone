@@ -32,7 +32,7 @@ const Signin = () => {
         <div>
           {darkMode ? (
             <button
-              className="border profile-icon border-[#353535] text-[#2e96ff] xs:hover:bg-[#263850] h-[35px] px-3 gap-2 flex justify-center items-center rounded-[20px]"
+              className="border profile-icon border-[#353535] text-[#2e96ff] xs:hover:bg-[#263850] sm:text-[14px] text-[12px] h-[35px] px-3 gap-2 flex justify-center items-center rounded-[20px]"
               onClick={() => loginWithRedirect()}
             >
               <AccountCircleOutlinedIcon />
@@ -40,7 +40,7 @@ const Signin = () => {
             </button>
           ) : (
             <button
-              className="border profile-icon border-[#d4d4d4] text-[#0666df] xs:hover:bg-[#def1ff] h-[35px] px-3 gap-2 flex justify-center items-center rounded-[20px]"
+              className="border profile-icon border-[#d4d4d4] text-[#0666df] xs:hover:bg-[#def1ff] sm:text-[14px] text-[12px] h-[35px] px-3 gap-2 flex justify-center items-center rounded-[20px]"
               onClick={() => loginWithRedirect()}
             >
               <AccountCircleOutlinedIcon />
